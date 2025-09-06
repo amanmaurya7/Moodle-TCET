@@ -1,0 +1,144 @@
+# =============================================================================
+# Moodle & XAMPP Git Ignore Configuration
+# =============================================================================
+
+# XAMPP Server Files (Don't push server binaries)
+server/apache/
+server/mysql/
+server/php/
+server/sendmail/
+server/tomcat/
+server/cgi-bin/
+server/htdocs/
+server/install/
+server/licenses/
+server/locale/
+server/tmp/
+server/webalizer/
+server/xampp*/
+server/FileZillaFTP/
+server/MercuryMail/
+server/anonymous/
+server/htpasswd/
+
+# XAMPP Control Files
+server/*.exe
+server/*.bat
+server/*.ini
+server/*.ico
+server/*.sys
+server/*.awk
+server/*.inc
+server/*.png
+server/*.php
+server/readme*.txt
+
+# Moodle Data Directory (Contains user uploads, cache, sessions)
+server/moodledata/
+moodledata/
+
+# Moodle Config (Contains sensitive database credentials)
+server/moodle/config.php
+moodle/config.php
+
+# Moodle Cache & Temporary Files
+server/moodle/cache/
+moodle/cache/
+**/cache/
+**/temp/
+**/tmp/
+**/sessions/
+**/localcache/
+
+# Moodle Logs
+server/moodle/*.log
+moodle/*.log
+**/logs/
+*.log
+
+# Database Files
+*.sql
+*.db
+*.sqlite
+server/mysql/data/
+mysql/data/
+
+# Composer Dependencies (Can be reinstalled)
+server/moodle/vendor/
+moodle/vendor/
+composer.lock
+
+# Node.js Dependencies (Can be reinstalled)
+server/moodle/node_modules/
+moodle/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment Files
+.env
+.env.local
+.env.production
+.env.test
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*~
+
+# Windows System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux System Files
+*~
+.nfs*
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Archive Files (Usually don't need to be tracked)
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+
+# Personal Configuration Files
+personal_config.php
+local_settings.php
+
+# SSL Certificates (Security sensitive)
+*.pem
+*.key
+*.crt
+*.csr
+
+# Custom Theme Compiled Files (Will be regenerated)
+server/moodle/theme/*/style/
+moodle/theme/*/style/
+
+# PHPUnit Testing
+phpunit.xml
+server/moodle/phpunit.xml
+moodle/phpunit.xml

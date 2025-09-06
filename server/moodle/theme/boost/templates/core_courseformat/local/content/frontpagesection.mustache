@@ -1,0 +1,60 @@
+{{!
+    Modern Frontpage Section Template
+    Custom override for a beautiful modern homepage
+}}
+
+{{! Hero Section }}
+<div class="site-hero animate-fade-in-up">
+    <div class="container">
+        <div class="hero-content">
+            <h1>{{sitename}}</h1>
+            {{! Removed hero subtitle for minimal homepage }}
+            <div class="hero-buttons">
+                <a href="{{config.wwwroot}}/course/" class="btn btn-light">
+                    <i class="fa fa-graduation-cap me-2"></i>Explore Courses
+                </a>
+                {{#isloggedin}}
+                <a href="{{config.wwwroot}}/my/" class="btn btn-light">
+                    <i class="fa fa-dashboard me-2"></i>My Dashboard
+                </a>
+                {{/isloggedin}}
+                {{^isloggedin}}
+                <a href="{{config.wwwroot}}/login/" class="btn btn-light">
+                    <i class="fa fa-sign-in me-2"></i>Login
+                </a>
+                {{/isloggedin}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{! Removed stats section for minimal homepage }}
+
+<div class="course-content" id="courseformat-frontpage-main-topic">
+    {{#showsettings}}
+    <div class="mb-2 text-center">
+        <a href="{{{settingsurl}}}" class="btn btn-outline-primary btn-sm" title="{{#str}} edit {{/str}}" aria-label="{{#str}} edit {{/str}}">
+            {{#pix}} i/settings, moodle {{/pix}} Edit Homepage
+        </a>
+    </div>
+    {{/showsettings}}
+    
+    <div class="sitetopic">
+        <ul class="topics section-list frontpage" data-for="course_sectionlist">
+            {{#sections}}
+                {{> core_courseformat/local/content/section }}
+            {{/sections}}
+        </ul>
+    </div>
+</div>
+
+{{! Removed features section for minimal homepage }}
+
+{{#js}}
+{{! The home page should be as fast as possible, we only load the editor when needed.}}
+{{#editing}}
+require(['core_courseformat/local/content/section'], function(sectionManager) {
+    sectionManager.init();
+});
+{{/editing}}
+{{/js}}
